@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import FleetManagement from './js-components/FleetManagement'; 
 import LandingPage from './js-components/Pages/LandingPage';
 import SignUpPage from "./js-components/Pages/SignUpPage";
 import SignInPage from "./js-components/Pages/SignInPage";
-import HomePageLAyout from "./js-components/Home-page-components/components/HomePageLAyout";
+import HomePageLAyout from "./js-components/Home-page-components/components/HomePageLayout";
 import DashboardPage from "./js-components/Pages/Home-pages/DashboardPage";
 import VehiclePage from "./js-components/Pages/Home-pages/VehiclePage";
 import DriverPage from "./js-components/Pages/Home-pages/DriverPage";
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
+        <Route path="/Fleet-management" element={<FleetManagement />} />
         <Route path="/Fleet-management/" element={<LandingPage />} />
         <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
         <Route path="/Fleet-management/signIn-page" element={<SignInPage />} />
@@ -31,7 +33,7 @@ const App = () => {
           <Route path="/Fleet-management/dashboard-page" element={<DashboardPage />} />
           <Route path="/Fleet-management/vehicle-page" element={<VehiclePage />} />
           <Route path="/Fleet-management/driver-page" element={<DriverPage />} />
-          <Route path="/Gamma-Fleet/liveTrack-page" element={<LiveTrackPage />} />
+          <Route path="/Fleet-management/liveTrack-page" element={<LiveTrackPage />} />
           <Route path="/Fleet-management/fillUp-page" element={<FillUpPage />} />
           <Route path="/Fleet-management/maintenance-page" element={<MaintenancePage />} />
           <Route path="/Fleet-management/user-management-page" element={<UserManagementPage />} />
