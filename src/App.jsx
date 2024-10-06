@@ -24,20 +24,20 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/Gamma-Fleet/" element={<LandingPage />} />
-        <Route path="/Gamma-Fleet/signUp-page" element={<SignUpPage />} />
-        <Route path="/Gamma-Fleet/signIn-page" element={<SignInPage />} />
+        <Route path="/Fleet-management/" element={<LandingPage />} />
+        <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
+        <Route path="/Fleet-management/signIn-page" element={<SignInPage />} />
         <Route element={<HomePageLAyout />}>
-          <Route path="/Gamma-Fleet/dashboard-page" element={<DashboardPage />} />
-          <Route path="/Gamma-Fleet/vehicle-page" element={<VehiclePage />} />
-          <Route path="/Gamma-Fleet/driver-page" element={<DriverPage />} />
+          <Route path="/Fleet-management/dashboard-page" element={<DashboardPage />} />
+          <Route path="/Fleet-management/vehicle-page" element={<VehiclePage />} />
+          <Route path="/Fleet-management/driver-page" element={<DriverPage />} />
           <Route path="/Gamma-Fleet/liveTrack-page" element={<LiveTrackPage />} />
-          <Route path="/Gamma-Fleet/fillUp-page" element={<FillUpPage />} />
-          <Route path="/Gamma-Fleet/maintenance-page" element={<MaintenancePage />} />
-          <Route path="/Gamma-Fleet/user-management-page" element={<UserManagementPage />} />
-          <Route path="/Gamma-Fleet/report-page" element={<ReportPage />} />
-          <Route path="/Gamma-Fleet/trips-page" element={<TripsPage />} />
-          <Route path="/Gamma-Fleet/settings-page" element={<SettingsPage />} />
+          <Route path="/Fleet-management/fillUp-page" element={<FillUpPage />} />
+          <Route path="/Fleet-management/maintenance-page" element={<MaintenancePage />} />
+          <Route path="/Fleet-management/user-management-page" element={<UserManagementPage />} />
+          <Route path="/Fleet-management/report-page" element={<ReportPage />} />
+          <Route path="/Fleet-management/trips-page" element={<TripsPage />} />
+          <Route path="/Fleet-management/settings-page" element={<SettingsPage />} />
         </Route>
       </Routes>
     </Router>
