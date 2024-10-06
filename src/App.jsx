@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FleetManagement from './js-components/FleetManagement'; 
 import LandingPage from './js-components/Pages/LandingPage';
 import SignUpPage from "./js-components/Pages/SignUpPage";
 import SignInPage from "./js-components/Pages/SignInPage";
@@ -25,7 +24,6 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/Fleet-management" element={<FleetManagement />} />
         <Route path="/Fleet-management/" element={<LandingPage />} />
         <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
         <Route path="/Fleet-management/signIn-page" element={<SignInPage />} />
