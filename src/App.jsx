@@ -22,7 +22,7 @@ library.add(fab, fas, far);
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Fleet-management">
       <Routes>
         <Route path="/Fleet-management/" element={<LandingPage />} />
         <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
