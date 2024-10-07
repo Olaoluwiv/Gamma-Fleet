@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import LandingPage from './js-components/Pages/LandingPage';
 import SignUpPage from "./js-components/Pages/SignUpPage";
 import SignInPage from "./js-components/Pages/SignInPage";
-import HomePageLAyout from "./js-components/Home-page-components/components/HomePageLAyout";
+import HomePageLAyout from "./js-components/Home-page-components/components/HomePageLayout";
 import DashboardPage from "./js-components/Pages/Home-pages/DashboardPage";
 import VehiclePage from "./js-components/Pages/Home-pages/VehiclePage";
 import DriverPage from "./js-components/Pages/Home-pages/DriverPage";
@@ -22,7 +22,7 @@ library.add(fab, fas, far);
 
 const App = () => {
   return (
-    <Router>
+    <Router basename="/Fleet-management">
       <Routes>
         <Route path="/Fleet-management/" element={<LandingPage />} />
         <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
