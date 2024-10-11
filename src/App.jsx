@@ -22,22 +22,22 @@ library.add(fab, fas, far);
 
 const App = () => {
   return (
-    <Router basename="/Fleet-management">
+    <Router>
       <Routes>
-        <Route path="/Fleet-management/" element={<LandingPage />} />
-        <Route path="/Fleet-management/signUp-page" element={<SignUpPage />} />
-        <Route path="/Fleet-management/signIn-page" element={<SignInPage />} />
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/signUp-page" element={<SignUpPage />} />
+        <Route path="/signIn-page" element={<SignInPage />} />
         <Route element={<HomePageLAyout />}>
-          <Route path="/Fleet-management/dashboard-page" element={<DashboardPage />} />
-          <Route path="/Fleet-management/vehicle-page" element={<VehiclePage />} />
-          <Route path="/Fleet-management/driver-page" element={<DriverPage />} />
-          <Route path="/Fleet-management/liveTrack-page" element={<LiveTrackPage />} />
-          <Route path="/Fleet-management/fillUp-page" element={<FillUpPage />} />
-          <Route path="/Fleet-management/maintenance-page" element={<MaintenancePage />} />
-          <Route path="/Fleet-management/user-management-page" element={<UserManagementPage />} />
-          <Route path="/Fleet-management/report-page" element={<ReportPage />} />
-          <Route path="/Fleet-management/trips-page" element={<TripsPage />} />
-          <Route path="/Fleet-management/settings-page" element={<SettingsPage />} />
+          <Route path="/dashboard-page" element={<DashboardPage />} />
+          <Route path="/vehicle-page" element={<VehiclePage />} />
+          <Route path="/driver-page" element={<DriverPage />} />
+          <Route path="/liveTrack-page" element={<LiveTrackPage />} />
+          <Route path="/fillUp-page" element={<FillUpPage />} />
+          <Route path="/maintenance-page" element={<MaintenancePage />} />
+          <Route path="/user-management-page" element={<UserManagementPage />} />
+          <Route path="/report-page" element={<ReportPage />} />
+          <Route path="/trips-page" element={<TripsPage />} />
+          <Route path="/settings-page" element={<SettingsPage />} />
         </Route>
       </Routes>
     </Router>
