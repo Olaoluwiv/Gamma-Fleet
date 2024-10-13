@@ -16,7 +16,7 @@ const VehiclePage = () => {
     const fetchVehicles = useCallback(async () => {
         try {
             const token = Cookies.load('token');
-            const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-vehicle', {
+            const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-vehicle', {
                 withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${token}`
