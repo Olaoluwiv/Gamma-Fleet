@@ -32,7 +32,7 @@ const VehicleStatus = () => {
         const fetchVehicles = async () => {
             try {
                 const token = Cookies.load('token');
-                const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-vehicle', {
+                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-vehicle', {
                     withCredentials: true,
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -67,12 +67,12 @@ const VehicleStatus = () => {
     return (
         <section className="vehicle-status-section">
             {Object.keys(statusCounts).map((status, index) => {
-                const percentage = (statusCounts[status] / totalVehicles) * 100;
-                const dashArray = 2 * Math.PI * 40; // 40 is the radius of the circle
+                const percentage = totalVehicles > 0 ? (statusCounts[status] / totalVehicles) * 100 : 0;
+                const dashArray = 2 * Math.PI * 40;
                 const dashOffset = dashArray - (dashArray * percentage) / 100;
 
                 const strokeColor = statusCounts[status] > 0 ? getStatusColor(status) : "gray";
-                const strokeWidth = statusCounts[status] > 0 ? "10" : "2"; // thicker stroke for non-zero counts
+                const strokeWidth = statusCounts[status] > 0 ? "10" : "2";
 
                 return (
                     <div key={index} className="vehicle-status-container">
@@ -84,9 +84,17 @@ const VehicleStatus = () => {
                                             cx="50"
                                             cy="50"
                                             r="40"
+                                            stroke="gray"
+                                            strokeWidth="1"
+                                            fill="white"
+                                        />
+                                        <circle
+                                            cx="50"
+                                            cy="50"
+                                            r="40"
                                             stroke={strokeColor}
                                             strokeWidth={strokeWidth}
-                                            fill="white"
+                                            fill="none"
                                             strokeDasharray={dashArray}
                                             strokeDashoffset={dashOffset}
                                         />
