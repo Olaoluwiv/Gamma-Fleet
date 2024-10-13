@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 import axios from 'axios';
@@ -30,14 +31,14 @@ const SignInPage = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('https://fleet-management-backend.onrender.com/api/login', {
+            const response = await axios.post('https://gamma-fleet-backend.onrender.com/api/login', {
                 email: formData.email,
                 password: formData.password,
             }, {
                 withCredentials: true
             });
-            Cookies.save('token', response.data.token, { path: '/Fleet-management/' });
-            navigate("/Fleet-management/dashboard-page");
+            Cookies.save('token', response.data.token, { path: '/' });
+            navigate("/dashboard-page");
         } catch (error) {
             setLoading(false)
             if (error) {
@@ -53,7 +54,7 @@ const SignInPage = () => {
     return (
         <section className='entry-form-section'>
             <div className='form-logo'>
-                <img src={logo} alt="gamma fleet logo" onClick={() => navigate("/Fleet-management/")} />
+                <img src={logo} alt="gamma fleet logo" onClick={() => navigate("/")} />
             </div>
             <div className="entry-form-sect">
                 <h1>Login to your account</h1>
@@ -88,7 +89,7 @@ const SignInPage = () => {
                             <img src={appleIcon} alt="apple icon" />
                             <p>Sign in with Apple</p>
                         </div>
-                        <p className="p-link">Don’t have an account? <b onClick={() => navigate("/Fleet-mamagement/signUp-page")}>Sign up</b></p>
+                        <p className="p-link">Don’t have an account? <b onClick={() => navigate("/signUp-page")}>Sign up</b></p>
                     </form>
                     <div className='entry-form-image'>
                         <img src={LoginImage} alt="image for creating account" />
@@ -100,3 +101,5 @@ const SignInPage = () => {
 }
 
 export default SignInPage
+
+// 59dferYSWR@#$
