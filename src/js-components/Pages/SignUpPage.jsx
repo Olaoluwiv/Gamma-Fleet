@@ -85,7 +85,7 @@ const SignUpPage = () => {
         e.preventDefault();
         setLoading(true);
         try {
-            const response = await axios.post('https://gamma-fleet-backend.onrender.com/api/register-client', {
+            const response = await axios.post('https://fleet-management-backend.onrender.com/api/register-client', {
                 email: formData.email,
                 password: formData.password,
                 clientName: formData.clientName,
@@ -95,7 +95,7 @@ const SignUpPage = () => {
             }, {
                 withCredentials: true
             });
-            Cookies.save('token', response.data.token, { path: '/Gamma-Fleet/' });
+            Cookies.save('token', response.data.token, { path: '/Fleet-management/' });
             setStep(prevStep => prevStep + 1);
         } catch (error) {
             setLoading(false);
@@ -123,7 +123,7 @@ const SignUpPage = () => {
         }
 
         try {
-            await axios.post('https://gamma-fleet-backend.onrender.com/api/verify-client', {
+            await axios.post('https://fleet-management-backend.onrender.com/api/verify-client', {
                 otp: otp
             }, {
                 withCredentials: true,
@@ -132,7 +132,7 @@ const SignUpPage = () => {
                 }
             });
             setLoading(false);
-            navigate("/Gamma-Fleet/dashboard-page");
+            navigate("/Fleet-management/dashboard-page");
         } catch (error) {
             setLoading(false);
             if (error) {
@@ -169,7 +169,7 @@ const SignUpPage = () => {
         }
 
         try {
-            await axios.patch('https://gamma-fleet-backend.onrender.com/api/generate-new-otp', {}, {
+            await axios.patch('https://fleet-management-backend.onrender.com/api/generate-new-otp', {}, {
                 withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${token}`
@@ -205,7 +205,7 @@ const SignUpPage = () => {
     return (
         <section className='entry-form-section'>
             <div className='form-logo'>
-                <img src={logo} alt="gamma fleet logo" onClick={() => navigate("/Gamma-Fleet/")} />
+                <img src={logo} alt="gamma fleet logo" onClick={() => navigate("/Fleet-management/")} />
             </div>
             <form className='entry-form-sect' onSubmit={step === 1 ? handleNext : step === 2 ? handleSubmit : handleVerify}>
                 <h1 id='heading'></h1>
@@ -268,7 +268,7 @@ const SignUpPage = () => {
                             />
                             <span className='link'>
                                 <input type="checkbox" required />
-                                <p>I agree with the <b>Terms & Conditions</b> of Gamma Fleet</p>
+                                <p>I agree with the <b>Terms & Conditions</b> of Fleet management</p>
                             </span>
                             <Button type="submit" label={<>Continue<FontAwesomeIcon icon="fa-solid fa-arrow-right" /></>} />
                             <div className='signOption'>
@@ -279,7 +279,7 @@ const SignUpPage = () => {
                                 <img src={appleIcon} alt="apple icon" />
                                 <p>Sign in with Apple</p>
                             </div>
-                            <p className='p-link'>Already have an account? <b onClick={() => navigate("/Gamma-Fleet/signIn-page")}>Login</b></p>
+                            <p className='p-link'>Already have an account? <b onClick={() => navigate("/Fleet-management/signIn-page")}>Login</b></p>
                         </div>
                         <div className='entry-form-image'>
                             <img src={createAccountImage} alt="image for creating account" />
