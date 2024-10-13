@@ -33,7 +33,7 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
     useEffect(() => {
         const fetchDrivers = async () => {
             try {
-                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver',
+                const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-driver',
                     {
                         withCredentials: true,
                         headers: {

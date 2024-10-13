@@ -22,7 +22,7 @@ const DriverListSection = () => {
     const token = Cookies.load('token');
     setLoading(true);
     try {
-      const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver', {
+      const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-driver', {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`
@@ -44,7 +44,7 @@ const DriverListSection = () => {
     const token = Cookies.load('token');
     setLoading(true);
     try {
-      const response = await axios.get(`https://gamma-fleet-backend.onrender.com/api/get-driver/${driverId}`, {
+      const response = await axios.get(`https://fleet-management-backend.onrender.com/api/get-driver/${driverId}`, {
         withCredentials: true,
         headers: {
           Authorization: `Bearer ${token}`
