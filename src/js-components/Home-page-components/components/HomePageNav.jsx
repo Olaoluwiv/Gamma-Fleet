@@ -24,52 +24,52 @@ const HomePageNav = () => {
         {
             title: "Dashboard",
             icon: id_card,
-            nav: "/Gamma-Fleet/dashboard-page"
+            nav: "/Fleet-management/dashboard-page"
         },
         {
             title: "Vehicle",
             icon: car,
-            nav: "/Gamma-Fleet/vehicle-page"
+            nav: "/Fleet-management/vehicle-page"
         },
         {
             title: "Driver",
             icon: driver,
-            nav: "/Gamma-Fleet/driver-page"
+            nav: "/Fleet-management/driver-page"
         },
         {
             title: "Live Track",
             icon: lTrack,
-            nav: "/Gamma-Fleet/liveTrack-page"
+            nav: "/Fleet-management/liveTrack-page"
         },
         {
             title: "Fill up",
             icon: funnel,
-            nav: "/Gamma-Fleet/fillUp-page"
+            nav: "/Fleet-management/fillUp-page"
         },
         {
             title: "Maintenance",
             icon: tools,
-            nav: "/Gamma-Fleet/maintenance-page"
+            nav: "/Fleet-management/maintenance-page"
         },
         {
             title: "User Management",
             icon: user,
-            nav: "/Gamma-Fleet/user-management-page"
+            nav: "/Fleet-management/user-management-page"
         },
         {
             title: "Report",
             icon: money,
-            nav: "/Gamma-Fleet/report-page"
+            nav: "/Fleet-management/report-page"
         },
         {
             title: "Trips",
             icon: train,
-            nav: "/Gamma-Fleet/trips-page"
+            nav: "/Fleet-management/trips-page"
         },
         {
             title: "Settings",
             icon: setting,
-            nav: "/Gamma-Fleet/settings-page"
+            nav: "/Fleet-management/settings-page"
         }
     ]);
 
@@ -113,7 +113,7 @@ const HomePageNav = () => {
     const handleLogOut = () => {
         Cookies.remove('token', { path: '/Gamma-Fleet/' });
         Cookies.remove('token', { path: '/' });
-        navigate("/Gamma-Fleet/signIn-page")
+        navigate("/Fleet-management/signIn-page")
     };
 
     return (
