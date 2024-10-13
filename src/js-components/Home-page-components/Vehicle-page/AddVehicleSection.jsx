@@ -33,7 +33,7 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
     useEffect(() => {
         const fetchDrivers = async () => {
             try {
-                const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-driver',
+                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver',
                     {
                         withCredentials: true,
                         headers: {
@@ -217,11 +217,21 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
                                 required
                             >
                                 <option value="" disabled>Enter</option>
-                                {Array.isArray(drivers) && drivers.map((driver, index) => (
-                                    <option key={index} value={driver._id}>
-                                        {driver.fullName}
-                                    </option>
-                                ))}
+                                {Array.isArray(drivers) && drivers.length > 0 ? (
+                                    drivers.filter(driver => driver.assignedVehicle.vehicleName === null).length > 0 ? (
+                                        drivers
+                                            .filter(driver => driver.assignedVehicle.vehicleName === null)
+                                            .map((driver, index) => (
+                                                <option key={index} value={driver._id}>
+                                                    {driver.fullName}
+                                                </option>
+                                            ))
+                                    ) : (
+                                        <option value="">No driver found</option>
+                                    )
+                                ) : (
+                                    <option value="">No driver found</option>
+                                )}
                             </select>
                         </span>
                     </div>
