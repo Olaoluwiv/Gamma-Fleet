@@ -60,7 +60,7 @@ const AddDriversection = ({ onClick, setDriverForm, fetchDrivers }) => {
         }
 
         try {
-            await axios.post('https://gamma-fleet-backend.onrender.com/api/register-driver', formData, {
+            await axios.post('https://fleet-management-backend.onrender.com/api/register-driver', formData, {
                 withCredentials: true,
                 headers: {
                     Authorization: `Bearer ${token}`
