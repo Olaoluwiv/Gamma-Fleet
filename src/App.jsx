@@ -39,6 +39,7 @@ const App = () => {
           <Route path="/report-page" element={<ReportPage />} />
           <Route path="/trips-page" element={<TripsPage />} />
           <Route path="/settings-page" element={<SettingsPage />} />
+          <Route path="*" element={<h2>Page Not Found</h2>} /> {/* Fallback route */}
         </Route>
       </Routes>
     </Router>
