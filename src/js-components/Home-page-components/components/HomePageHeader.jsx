@@ -15,7 +15,7 @@ const HomePageHeader = () => {
         const fetchClient = async () => {
             setLoading(true);
             try {
-                const response = await axios.get('https://fleet-management-backend.onrender.com/api/get-client', {
+                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-client', {
                     withCredentials: true,
                     headers: {
                         Authorization: `Bearer ${token}`
