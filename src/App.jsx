@@ -28,7 +28,7 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/signUp-page" element={<SignUpPage />} />
         <Route path="/signIn-page" element={<SignInPage />} />
-        <Route element={<HomePageLAyout />}>
+        <Route element={<HomePageLayout />}>
           <Route path="/dashboard-page" element={<DashboardPage />} />
           <Route path="/vehicle-page" element={<VehiclePage />} />
           <Route path="/driver-page" element={<DriverPage />} />
@@ -39,7 +39,6 @@ const App = () => {
           <Route path="/report-page" element={<ReportPage />} />
           <Route path="/trips-page" element={<TripsPage />} />
           <Route path="/settings-page" element={<SettingsPage />} />
-          <Route path="*" element={<h2>Page Not Found</h2>} /> {/* Fallback route */}
         </Route>
       </Routes>
     </Router>
