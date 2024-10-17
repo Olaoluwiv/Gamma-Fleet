@@ -5,6 +5,6 @@ import react from "@vitejs/plugin-react";
 export default defineConfig(({ command, mode }) => {
   return {
     plugins: [react()],
-    base: command === 'build' ? '/Fleet-management/' : '/', // Use '/' for local dev and '/Fleet-managemenlsnpmt/' for GitHub Pages
+    base: command === 'build' ? '/Gamma-Fleet/' : '/', // Use '/' for local dev and '/Gamma-Fleelsnpmt/' for GitHub Pages
   };
 });
