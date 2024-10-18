@@ -24,23 +24,20 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        {/* Public routes */}
         <Route path="/" element={<LandingPage />} />
         <Route path="/Gamma-Fleet/signUp-page" element={<SignUpPage />} />
         <Route path="/Gamma-Fleet/signIn-page" element={<SignInPage />} />
-
-        {/* Protected routes within HomePageLayout */}
-        <Route path="/Gamma-Fleet" element={<HomePageLAyout />}>
-          <Route path="dashboard-page" element={<DashboardPage />} />
-          <Route path="vehicle-page" element={<VehiclePage />} />
-          <Route path="driver-page" element={<DriverPage />} />
-          <Route path="liveTrack-page" element={<LiveTrackPage />} />
-          <Route path="fillUp-page" element={<FillUpPage />} />
-          <Route path="maintenance-page" element={<MaintenancePage />} />
-          <Route path="user-management-page" element={<UserManagementPage />} />
-          <Route path="report-page" element={<ReportPage />} />
-          <Route path="trips-page" element={<TripsPage />} />
-          <Route path="settings-page" element={<SettingsPage />} />
+        <Route element={<HomePageLAyout />}>
+          <Route path="/Gamma-Fleet/dashboard-page" element={<DashboardPage />} />
+          <Route path="/vehicle-page" element={<VehiclePage />} />
+          <Route path="/driver-page" element={<DriverPage />} />
+          <Route path="/liveTrack-page" element={<LiveTrackPage />} />
+          <Route path="/fillUp-page" element={<FillUpPage />} />
+          <Route path="/maintenance-page" element={<MaintenancePage />} />
+          <Route path="/user-management-page" element={<UserManagementPage />} />
+          <Route path="/report-page" element={<ReportPage />} />
+          <Route path="/trips-page" element={<TripsPage />} />
+          <Route path="/settings-page" element={<SettingsPage />} />
         </Route>
       </Routes>
     </Router>
