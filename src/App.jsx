@@ -24,7 +24,7 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<LandingPage />} />
+        <Route path="/" element={<Navigate to="/Gamma-Fleet" replace />} />
         <Route path="/Gamma-Fleet/signUp-page" element={<SignUpPage />} />
         <Route path="/Gamma-Fleet/signIn-page" element={<SignInPage />} />
         <Route path="/Gamma-Fleet" element={<HomePageLAyout />}>
