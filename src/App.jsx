@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 import LandingPage from './js-components/Pages/LandingPage';
 import SignUpPage from "./js-components/Pages/SignUpPage";
 import SignInPage from "./js-components/Pages/SignInPage";
@@ -24,10 +24,10 @@ const App = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Navigate to="/Gamma-Fleet" replace />} />
+        <Route path="/" element={<LandingPage />} />
         <Route path="/Gamma-Fleet/signUp-page" element={<SignUpPage />} />
         <Route path="/Gamma-Fleet/signIn-page" element={<SignInPage />} />
-        <Route path="/Gamma-Fleet" element={<HomePageLAyout />}>
+        <Route path="/" element={<HomePageLAyout />}>
           <Route path="dashboard-page" element={<DashboardPage />} />
           <Route path="vehicle-page" element={<VehiclePage />} />
           <Route path="driver-page" element={<DriverPage />} />
