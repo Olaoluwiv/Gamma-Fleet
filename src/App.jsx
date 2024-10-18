@@ -28,7 +28,8 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/Gamma-Fleet/signUp-page" element={<SignUpPage />} />
         <Route path="/Gamma-Fleet/signIn-page" element={<SignInPage />} />
-
+        
+        <Route path="/dashboard-page" element={<Navigate to="/Gamma-Fleet/dashboard-page" />} />
         {/* Protected routes under HomePageLAyout */}
         <Route path="/Gamma-Fleet" element={<HomePageLAyout />}>
           <Route path="dashboard-page" element={<DashboardPage />} />
