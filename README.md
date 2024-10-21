@@ -61,21 +61,23 @@ Express.js: Backend framework
 MongoDB: Database for storing fleet and user data
   </li>
 </ul>
-Getting Started
-Prerequisites
+<p>Getting Started</p>
+<h2>Prerequisites</h2>
 
-Before you begin, ensure you have the following installed:
-
+<p>Before you begin, ensure you have the following installed:</p>
+<ul>
+  <li>
 Node.js (v14 or higher)
 NPM (v6 or higher) or Yarn
 MongoDB
-Installation
-To get a local copy of the Gamma Fleet project up and running, follow these steps:
+  </li>
+</ul>
+<p>Installation</p>
+<h2>To get a local copy of the Gamma Fleet project up and running, follow these steps:</h2>
 
-Clone the repository:
+<p>Clone the repository:</p>
 
 bash
-Copy code
 git clone https://github.com/olaoluwiv/Gamma-Fleet.git
 Navigate to the project directory:
 
