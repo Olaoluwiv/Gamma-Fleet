@@ -1,99 +1,98 @@
                               Gamma Fleet
 Gamma Fleet is a comprehensive fleet management system designed to provide real-time vehicle tracking, maintenance management, user management, reporting, and analytics for businesses that manage fleets of vehicles. It offers features such as driver tracking, vehicle status, trip management, and customizable settings to streamline fleet operations.
 
-#Table of Contents
-Project Overview
-Features
-Tech Stack
-Libraries Used
-Getting Started
-Installation
-Usage
-API Integration
-Contributing
-License
-Project Overview
+<p>#Table of Contents</p>
+<ul>
+<li></li>Project Overview
+<li>Features</li>
+<li>Tech Stack</li>
+<li>Libraries Used</li>
+<li>Getting Started</li>
+<li>Installation</li>
+<li>Usage</li>
+<li>API Integration</li>
+<li>Contributing</li>
+<li>License</li></ul>
+<p>Project Overview</p>
 
-#Gamma Fleet is a full-stack web application for managing fleets of vehicles. It allows fleet managers to:
+
+<p>#Gamma Fleet is a full-stack web application for managing fleets of vehicles. It allows fleet managers to:</p>
 <ul>
-  <li>
-Track vehicles in real-time
-Manage vehicle maintenance schedules
-Track driver activities and trips
-Generate reports on fleet performance
-Manage user roles and permissions
-Customize settings for fleet operations
-  </li>
+  
+<li>Track vehicles in real-time</li>
+<li>Manage vehicle maintenance schedules</li>
+<li>Track driver activities and trips</li>
+<li>Generate reports on fleet performance</li>
+<li>Manage user roles and permissions</li>
+<li>Customize settings for fleet operations</li>
+  
 </ul>
-#Features
+<p>#Features</p>
 <ul>
-  <li>
-Real-Time Tracking: Monitor vehicles live on the map
-Vehicle Management: Add, update, and maintain vehicle information
-Driver Management: Track driver information and performance
-Trip Management: Manage trips and track journey details
-Reports and Analytics: Generate detailed reports on trips, fuel usage, and maintenance
-User Management: Administer different user roles and permissions
-Maintenance Alerts: Get notifications for vehicle maintenance schedules
-Settings: Customize the platform according to your organization's needs
-  </li>
+  
+<li>Real-Time Tracking: Monitor vehicles live on the map</li>
+<li>Vehicle Management: Add, update, and maintain vehicle information</li>
+<li>river Management: Track driver information and performance</li>D
+<li>Trip Management: Manage trips and track journey details</li>
+<li>Reports and Analytics: Generate detailed reports on trips, fuel usage, and maintenance</li>
+<li>>User Management: Administer different user roles and permissions</li
+<li>Maintenance Alerts: Get notifications for vehicle maintenance schedules</li>
+<li>Settings: Customize the platform according to your organization's needs</li>
 </ul>
-#Tech Stack
+<p>#Tech Stack</p>
 <ul>
-  <li>
-Frontend: React.js (React Router for navigation)
-Backend: Node.js, Express.js (for API)
-Database: MongoDB (NoSQL database)
-Styling: CSS, SCSS
-API Communication: Axios/Fetch
-Version Control: Git
-  </li>
+  
+<li>Frontend: React.js (React Router for navigation) </li>
+<li>Backend: Node.js, Express.js (for API)</li>
+<li>Database: MongoDB (NoSQL database)</li>
+<li>Styling: CSS, SCSS</li>
+<li>API Communication: Axios/Fetch</li>
+<li>Version Control: Git</li>
+ 
 </ul>
 
-#Libraries Used:
+<p>#Libraries Used:</p>
 <ul>
-  <li>
-React Router: For client-side routing
-Font Awesome: For icon sets
-Axios: For handling API requests
-dotenv: For environment variable management
-Express.js: Backend framework
-MongoDB: Database for storing fleet and user data
-  </li>
+  
+<li>React Router: For client-side routing </li>
+<li>Font Awesome: For icon sets </li>
+<li>Axios: For handling API requests </li>
+<li>dotenv: For environment variable management </li>
+<li>Express.js: Backend framework </li>
+<li>MongoDB: Database for storing fleet and user data </li>
+ 
 </ul>
 <p>Getting Started</p>
 <h2>Prerequisites</h2>
 
 <p>Before you begin, ensure you have the following installed:</p>
 <ul>
-  <li>
-Node.js (v14 or higher)
-NPM (v6 or higher) or Yarn
-MongoDB
-  </li>
+ 
+ <li>Node.js (v14 or higher)</li>
+ <li>NPM (v6 or higher) or Yarn</li>
+ <li>MongoDB</li>
+  
 </ul>
 <p>Installation</p>
 <h2>To get a local copy of the Gamma Fleet project up and running, follow these steps:</h2>
 
 <p>Clone the repository:</p>
 
-bash
-git clone https://github.com/olaoluwiv/Gamma-Fleet.git
-Navigate to the project directory:
+<p>bash</p>
+<h2>git clone https://github.com/olaoluwiv/Gamma-Fleet.git</h2>
+<p>Navigate to the project directory:</p>
 
 <p>#bash:</p>
 cd Gamma-Fleet
-Install the required dependencies:
-
+<p>Install the required dependencies:</p>
 Using npm:
 
 <p>#bash:</p>
 npm install
-Set up environment variables:
-
+<p>Set up environment variables:</p>
 Create a .env file in the root directory and configure your environment variables such as:
 
-#bash:
+<p>#bash:</p><br>
 REACT_APP_API_URL=https://your-api-url
 Start the development server:
 
