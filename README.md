@@ -1,4 +1,4 @@
-                             Gamma Fleet
+                              Gamma Fleet
 Gamma Fleet is a comprehensive fleet management system designed to provide real-time vehicle tracking, maintenance management, user management, reporting, and analytics for businesses that manage fleets of vehicles. It offers features such as driver tracking, vehicle status, trip management, and customizable settings to streamline fleet operations.
 
 #Table of Contents
@@ -81,13 +81,13 @@ bash
 git clone https://github.com/olaoluwiv/Gamma-Fleet.git
 Navigate to the project directory:
 
-#bash:
+<p>#bash:</p>
 cd Gamma-Fleet
 Install the required dependencies:
 
 Using npm:
 
-bash:
+<p>#bash:</p>
 npm install
 Set up environment variables:
 
@@ -101,40 +101,43 @@ For the frontend:
 #bash
 npm start
 For the backend:
-#bash
+<p>#bash:</p>
 cd backend
 npm start
-Navigate to your local development environment:
+<p>Navigate to your local development environment:</p> <br>
 
 Open your browser and go to http://localhost:3000.
 
-Usage
-Once the application is running, you can:
+<p>Usage</p> <br>
+<h2>Once the application is running, you can:</h2>
+<ul>
+<li>Register and sign in as an admin or fleet manager</li>
+<li>Add vehicles and drivers to the system</li>
+<li>Monitor fleet vehicles in real time</li>
+<li>Manage user accounts and permissions</li>
+<li>View reports on fleet and driver performance</li>
+<li>Adjust system settings for maintenance alerts and notifications</li></ul>
+<p>API Integration</p>
+<h2>Gamma fleet integrates with an API to manage vehicle data, track routes, and more. API endpoints include:</h2>
+<ul>
+<li>GET /api/get-client: Fetch client data</li>
+<li>POST /api/add-vehicle: Add a vehicle to the system</li>
+<li>PUT /api/update-vehicle/:id: Update vehicle details</li>
+<li>DELETE /api/delete-vehicle/:id: Remove a vehicle</li>
+  </ul>
+<p>More routes can be found in the API documentation.</p>
+<h2>Contributing</h2>
+<p>Contributions are welcome! If you'd like to contribute to the development of Gamma Fleet, please follow the steps below:</p>
 
-Register and sign in as an admin or fleet manager
-Add vehicles and drivers to the system
-Monitor fleet vehicles in real time
-Manage user accounts and permissions
-View reports on fleet and driver performance
-Adjust system settings for maintenance alerts and notifications
-API Integration
-Gamma Fleet integrates with an API to manage vehicle data, track routes, and more. API endpoints include:
-
-GET /api/get-client: Fetch client data
-POST /api/add-vehicle: Add a vehicle to the system
-PUT /api/update-vehicle/:id: Update vehicle details
-DELETE /api/delete-vehicle/:id: Remove a vehicle
-More routes can be found in the API documentation.
-Contributing
-Contributions are welcome! If you'd like to contribute to the development of Gamma Fleet, please follow the steps below:
-
-Fork the repository
-Create a new branch (git checkout -b feature/your-feature)
-Commit your changes (git commit -m 'Add some feature')
-Push to the branch (git push origin feature/your-feature)
-Open a pull request
-License
-#This project is licensed under the MIT License - see the LICENSE file for details.
+<p>Fork the repository</p>
+<ul>
+<li>Create a new branch (git checkout -b feature/your-feature)</li>
+<li>Commit your changes (git commit -m 'Add some feature')</li>
+<li>Push to the branch (git push origin feature/your-feature)</li>
+  </ul>
+<p>Open a pull request</p>
+<h2>License</h2>
+<p>#This project is licensed under the MIT License - see the LICENSE file for details.</p>
 
 ///////////////////////////////////////////////////////////////////////
 
