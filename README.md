@@ -3,7 +3,7 @@ Gamma Fleet is a comprehensive fleet management system designed to provide real-
 
 <p>#Table of Contents</p>
 <ul>
-<li></li>Project Overview
+<li>Project Overview</li>
 <li>Features</li>
 <li>Tech Stack</li>
 <li>Libraries Used</li>
