@@ -15,15 +15,19 @@ License
 Project Overview
 
 #Gamma Fleet is a full-stack web application for managing fleets of vehicles. It allows fleet managers to:
-
+<ul>
+  <li>
 Track vehicles in real-time
 Manage vehicle maintenance schedules
 Track driver activities and trips
 Generate reports on fleet performance
 Manage user roles and permissions
 Customize settings for fleet operations
-
+  </li>
+</ul>
 #Features
+<ul>
+  <li>
 Real-Time Tracking: Monitor vehicles live on the map
 Vehicle Management: Add, update, and maintain vehicle information
 Driver Management: Track driver information and performance
@@ -32,22 +36,31 @@ Reports and Analytics: Generate detailed reports on trips, fuel usage, and maint
 User Management: Administer different user roles and permissions
 Maintenance Alerts: Get notifications for vehicle maintenance schedules
 Settings: Customize the platform according to your organization's needs
-
+  </li>
+</ul>
 #Tech Stack
+<ul>
+  <li>
 Frontend: React.js (React Router for navigation)
 Backend: Node.js, Express.js (for API)
 Database: MongoDB (NoSQL database)
 Styling: CSS, SCSS
 API Communication: Axios/Fetch
 Version Control: Git
+  </li>
+</ul>
 
 #Libraries Used:
+<ul>
+  <li>
 React Router: For client-side routing
 Font Awesome: For icon sets
 Axios: For handling API requests
 dotenv: For environment variable management
 Express.js: Backend framework
 MongoDB: Database for storing fleet and user data
+  </li>
+</ul>
 Getting Started
 Prerequisites
 
