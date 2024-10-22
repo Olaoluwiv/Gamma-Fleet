@@ -14,5 +14,4 @@ Menubar.propTypes = {
   onClick: PropTypes.func.isRequired,
   className: PropTypes.string,
 };
-
 export default Menubar;
