@@ -33,16 +33,16 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
     useEffect(() => {
         const fetchDrivers = async () => {
             try {
-                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver',
-                    {
-                        withCredentials: true,
-                        headers: {
-                            Authorization: `Bearer ${token}`
-                        }
-                    });
+                const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver', {
+                    withCredentials: true,
+                    headers: {
+                        Authorization: `Bearer ${token}`
+                    }
+                });
                 setDrivers(response.data.drivers);
             } catch (error) {
                 console.error('There was an error fetching the drivers!', error);
+                setMessage('Error fetching drivers, please try again later.');
             }
         };
 
@@ -74,6 +74,7 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
 
         if (!token) {
             setMessage("No token found");
+            setLoading(false);
             return;
         }
 
@@ -89,13 +90,14 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
                     Authorization: `Bearer ${token}`
                 }
             });
+
             setLoading(false);
             setVehicleForm(false);
-            fetchVehicles()
+            fetchVehicles();
         } catch (error) {
             setLoading(false);
             console.error('There was an error adding the vehicle!', error);
-            setMessage(error.response?.data?.message || error.message);
+            setMessage(error.response?.data?.message || 'Error occurred while adding vehicle. Please try again.');
         }
     };
 
@@ -207,45 +209,39 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
                             required
                         />
                         <span className="inputFormStyle">
-    <label htmlFor="assignedDriver">Assign Driver</label>
-    <select
-        id="assignedDriver"
-        name="assignedDriver"
-        value={formData.assignedDriver}
-        className="selectStyle"
-        onChange={handleInputChange}
-        required
-    >
-        {/* Default placeholder option */}
-        <option value="" disabled>Enter</option>
-
-        {/* Check if there are drivers and if they are unassigned */}
-        {Array.isArray(drivers) && drivers.length > 0 ? (
-            drivers.filter(driver => driver.assignedVehicle.vehicleName === null).length > 0 ? (
-                /* Render unassigned drivers */
-                drivers
-                    .filter(driver => driver.assignedVehicle.vehicleName === null)
-                    .map((driver, index) => (
-                        <option key={index} value={driver._id}>
-                            {driver.fullName}
-                        </option>
-                    ))
-            ) : (
-                /* If no unassigned drivers are found, allow manual driver assignment */
-                <>
-                    <option value="">No unassigned drivers available</option>
-                    <option value="manual">Assign Driver Manually</option>
-                </>
-            )
-        ) : (
-            /* If no drivers are found at all, give an option to add or assign manually */
-            <>
-                <option value="">No drivers found</option>
-                <option value="manual">Assign Driver Manually</option>
-            </>
-        )}
-    </select>
-</span>
+                            <label htmlFor="assignedDriver">Assign Driver</label>
+                            <select
+                                id="assignedDriver"
+                                name="assignedDriver"
+                                value={formData.assignedDriver}
+                                className="selectStyle"
+                                onChange={handleInputChange}
+                                required
+                            >
+                                <option value="" disabled>Enter</option>
+                                {Array.isArray(drivers) && drivers.length > 0 ? (
+                                    drivers.filter(driver => driver.assignedVehicle?.vehicleName === null).length > 0 ? (
+                                        drivers
+                                            .filter(driver => driver.assignedVehicle?.vehicleName === null)
+                                            .map((driver, index) => (
+                                                <option key={index} value={driver._id}>
+                                                    {driver.fullName}
+                                                </option>
+                                            ))
+                                    ) : (
+                                        <>
+                                            <option value="">No unassigned drivers available</option>
+                                            <option value="manual">Assign Driver Manually</option>
+                                        </>
+                                    )
+                                ) : (
+                                    <>
+                                        <option value="">No drivers found</option>
+                                        <option value="manual">Assign Driver Manually</option>
+                                    </>
+                                )}
+                            </select>
+                        </span>
                     </div>
                     <div className='add-vehicle-form-content form-2'>
                         <span className='insurance'>
