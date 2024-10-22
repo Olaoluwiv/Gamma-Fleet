@@ -3,5 +3,4 @@ const LiveTrackPage = () => {
         <div></div>
     )
 }
-
 export default LiveTrackPage
