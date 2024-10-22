@@ -33,5 +33,4 @@ const MonthlyBudget = () => {
         </section>
     )
 }
-
 export default MonthlyBudget
