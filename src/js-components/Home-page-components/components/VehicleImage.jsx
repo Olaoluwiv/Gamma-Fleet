@@ -17,5 +17,4 @@ const VehicleImage = (productType) => {
     return busImage;
   } else return busImage;
 }
-
 export default VehicleImage
