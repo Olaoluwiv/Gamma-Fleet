@@ -5,5 +5,4 @@ const TripsPage = () => {
         <div></div>
     )
 }
-
 export default TripsPage
