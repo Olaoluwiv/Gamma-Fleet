@@ -1,5 +1,5 @@
 import busImage from "../../../assets/Vehicles/bus-image.png";
-import truckImage from "../../../assets/Vehicles/truck-image.png";
+import truckImage from "../../../assets/Vehicles/truck-image (1).png";
 import vanImage from "../../../assets/Vehicles/van-image.png";
 import suvImage from "../../../assets/Vehicles/suv-image.png";
 import sedanImage from "../../../assets/Vehicles/sedan-image.png";
