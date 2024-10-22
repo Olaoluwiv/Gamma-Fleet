@@ -10,5 +10,4 @@ const LiveLocationSection = () => {
       </div>
     )
   }
-  
   export default LiveLocationSection
