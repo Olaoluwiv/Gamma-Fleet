@@ -94,6 +94,4 @@ Select.propTypes = {
   onChange: PropTypes.func,
   className: PropTypes.string,
 }
-
-
 export default Button;
