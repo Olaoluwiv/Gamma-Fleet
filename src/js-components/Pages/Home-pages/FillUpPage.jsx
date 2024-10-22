@@ -6,5 +6,4 @@ const FillUpPage = () => {
         </div>
     )
 }
-
 export default FillUpPage
