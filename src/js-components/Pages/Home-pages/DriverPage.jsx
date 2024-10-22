@@ -8,5 +8,4 @@ const DriverPage = () => {
         </section>
     )
 }
-
 export default DriverPage
