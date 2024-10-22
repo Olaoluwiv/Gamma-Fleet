@@ -70,43 +70,46 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
     };
 
     // Handle form submission
-    const handleFormSubmit = async (e) => {
-        e.preventDefault();
-        setLoading(true);
-        setMessage(null); // Reset the message
+   const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setMessage(null); // Reset the message
 
-        if (!token) {
-            setMessage("Authentication error. Please log in again.");
-            setLoading(false);
-            return;
-        }
+    if (!token) {
+        setMessage("Authentication error. Please log in again.");
+        setLoading(false);
+        return;
+    }
 
-        const insurance = formData.insurance === 'Yes';
+    const insurance = formData.insurance === 'Yes';
 
-        try {
-            const response = await axios.post('https://gamma-fleet-backend.onrender.com/api/add-vehicle', {
-                ...formData,
-                insurance,
-            }, {
-                withCredentials: true,
-                headers: {
-                    Authorization: `Bearer ${token}`
-                }
-            });
+    // Log the form data
+    console.log('Form data being submitted:', { ...formData, insurance });
 
-            setLoading(false);
-            setVehicleForm(false);
-            fetchVehicles(); // Fetch updated vehicles after successful addition
+    try {
+        const response = await axios.post('https://gamma-fleet-backend.onrender.com/api/add-vehicle', {
+            ...formData,
+            insurance,
+        }, {
+            withCredentials: true,
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
 
-        } catch (error) {
-            setLoading(false);
+        console.log('Vehicle added successfully:', response.data);
+        setLoading(false);
+        setVehicleForm(false);
+        fetchVehicles(); // Fetch updated vehicles after successful addition
 
-            // Handle and display error messages from the response or fallback error
-            const errorMsg = error.response?.data?.message || "Error occurred while adding vehicle. Please try again.";
-            console.error('Error while adding vehicle:', error);
-            setMessage(errorMsg);
-        }
-    };
+    } catch (error) {
+        setLoading(false);
+        console.error('Error while adding vehicle:', error);
+        const errorMsg = error.response?.data?.message || "Error occurred while adding vehicle. Please try again.";
+        console.error('Error response message:', errorMsg);
+        setMessage(errorMsg);
+    }
+};
 
     return (
         <section className='addVehicleSection'>
