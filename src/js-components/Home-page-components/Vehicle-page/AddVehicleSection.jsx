@@ -30,25 +30,26 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
 
     const token = Cookies.load('token');
 
+    // Fetch drivers data on component mount
     useEffect(() => {
         const fetchDrivers = async () => {
             try {
                 const response = await axios.get('https://gamma-fleet-backend.onrender.com/api/get-driver', {
                     withCredentials: true,
                     headers: {
-                        Authorization: `Bearer ${token}`
+                        Authorization: `Bearer ${token}`,
                     }
                 });
                 setDrivers(response.data.drivers);
             } catch (error) {
                 console.error('There was an error fetching the drivers!', error);
-                setMessage('Error fetching drivers, please try again later.');
             }
         };
 
         fetchDrivers();
     }, [token]);
 
+    // Handle input changes
     const handleInputChange = (e) => {
         const { name, value } = e.target;
 
@@ -68,12 +69,14 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
         }
     };
 
+    // Handle form submission
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         setLoading(true);
+        setMessage(null); // Reset the message
 
         if (!token) {
-            setMessage("No token found");
+            setMessage("Authentication error. Please log in again.");
             setLoading(false);
             return;
         }
@@ -81,7 +84,7 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
         const insurance = formData.insurance === 'Yes';
 
         try {
-            await axios.post('https://gamma-fleet-backend.onrender.com/api/add-vehicle', {
+            const response = await axios.post('https://gamma-fleet-backend.onrender.com/api/add-vehicle', {
                 ...formData,
                 insurance,
             }, {
@@ -93,11 +96,15 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
 
             setLoading(false);
             setVehicleForm(false);
-            fetchVehicles();
+            fetchVehicles(); // Fetch updated vehicles after successful addition
+
         } catch (error) {
             setLoading(false);
-            console.error('There was an error adding the vehicle!', error);
-            setMessage(error.response?.data?.message || 'Error occurred while adding vehicle. Please try again.');
+
+            // Handle and display error messages from the response or fallback error
+            const errorMsg = error.response?.data?.message || "Error occurred while adding vehicle. Please try again.";
+            console.error('Error while adding vehicle:', error);
+            setMessage(errorMsg);
         }
     };
 
@@ -176,7 +183,7 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
                             label="Owner’s License"
                             type="text"
                             name="ownersLicense"
-                            placeholder="e.g John tall"
+                            placeholder="e.g ABC123456"
                             value={formData.ownersLicense}
                             onChange={handleInputChange}
                             required
@@ -218,27 +225,15 @@ const AddVehicleSection = ({ onClick, setVehicleForm, fetchVehicles }) => {
                                 onChange={handleInputChange}
                                 required
                             >
-                                <option value="" disabled>Enter</option>
+                                <option value="" disabled>Select Driver</option>
                                 {Array.isArray(drivers) && drivers.length > 0 ? (
-                                    drivers.filter(driver => driver.assignedVehicle?.vehicleName === null).length > 0 ? (
-                                        drivers
-                                            .filter(driver => driver.assignedVehicle?.vehicleName === null)
-                                            .map((driver, index) => (
-                                                <option key={index} value={driver._id}>
-                                                    {driver.fullName}
-                                                </option>
-                                            ))
-                                    ) : (
-                                        <>
-                                            <option value="">No unassigned drivers available</option>
-                                            <option value="manual">Assign Driver Manually</option>
-                                        </>
-                                    )
+                                    drivers.filter(driver => driver.assignedVehicle === null).map((driver, index) => (
+                                        <option key={index} value={driver._id}>
+                                            {driver.fullName}
+                                        </option>
+                                    ))
                                 ) : (
-                                    <>
-                                        <option value="">No drivers found</option>
-                                        <option value="manual">Assign Driver Manually</option>
-                                    </>
+                                    <option value="manual">Assign Driver Manually</option>
                                 )}
                             </select>
                         </span>
