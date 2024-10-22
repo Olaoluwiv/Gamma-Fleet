@@ -6,4 +6,4 @@ const DashDriverList = () => {
     )
 }
 
-export default DashDriverList
+export default DashDriverList;
