@@ -24,4 +24,5 @@ const NewsleterSection = () => {
     )
 }
 
+
 export default NewsleterSection
