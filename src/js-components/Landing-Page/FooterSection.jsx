@@ -50,4 +50,5 @@ function FooterSection() {
     );
 }
 
+
 export default FooterSection;
