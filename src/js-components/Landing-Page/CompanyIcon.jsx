@@ -18,4 +18,5 @@ const CompanyIcon = () => {
     )
 }
 
+
 export default CompanyIcon
