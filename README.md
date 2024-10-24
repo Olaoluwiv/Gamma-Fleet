@@ -32,7 +32,7 @@ Gamma Fleet is a comprehensive fleet management system designed to provide real-
   
 <li>Real-Time Tracking: Monitor vehicles live on the map</li>
 <li>Vehicle Management: Add, update, and maintain vehicle information</li>
-<li>river Management: Track driver information and performance</li>D
+<li>Driver Management: Track driver information and performance</li>D
 <li>Trip Management: Manage trips and track journey details</li>
 <li>Reports and Analytics: Generate detailed reports on trips, fuel usage, and maintenance</li>
 <li>>User Management: Administer different user roles and permissions</li
